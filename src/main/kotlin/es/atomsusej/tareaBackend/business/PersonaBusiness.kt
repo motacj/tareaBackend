@@ -53,20 +53,20 @@ class PersonaBusiness: IPersonaBusisness {
     @Throws(BusinessException::class, NotFoundException::class)
     override fun remove(id_persona: Int) {
         //Para saber si este dato esta en la BBDD sino retornara una Exception
-        val op: Optional<Persona>
-        try {
-            op = PersonaRepository!!.findById(id_persona)
-        }catch (e: Exception){
+        val op: Optional<Persona> = try {
+            PersonaRepository!!.findById(id_persona)
+        } catch (e: Exception) {
             throw BusinessException(e.message)
         }
-        if(!op.isPresent){
-            throw NotFoundException("No se encontro la Persona con id $id_persona")
-        }else{
-            try{
-                PersonaRepository!!.deleteById(id_persona)
-            }catch (e: Exception){
-                throw BusinessException(e.message)
-            }
+
+        if (!op.isPresent) {
+            throw NotFoundException("No se encontró la Persona con id $id_persona")
+        }
+
+        try {
+            PersonaRepository!!.deleteById(id_persona)
+        } catch (e: Exception) {
+            throw BusinessException(e.message)
         }
     }
 }

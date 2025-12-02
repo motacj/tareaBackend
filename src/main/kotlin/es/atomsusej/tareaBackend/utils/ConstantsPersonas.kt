@@ -1,16 +1,5 @@
 package es.atomsusej.tareaBackend.utils
 
-/*
-class ConstantsPersonas {
-companion object{
-        private const val URL_API_BASE = "/api"
-        private const val URL_API_VERSION = "/v1"
-        private const val URL_BASE = URL_API_BASE + URL_API_VERSION
-        //Base API endpoint para personas
-        const val URL_BASE_PERSONAS = "$URL_BASE/personas"
-    }
-}
- */
 class ConstantsApi {
     companion object {
         const val URL_API_BASE = "/api"
@@ -33,3 +22,9 @@ class ConstantsAsignaturas {
     }
 }
 
+class ConstantsMatriculas {
+    companion object {
+        const val URL_API_VERSION = "/v3"
+        const val URL_BASE_MATRICULAS = "${ConstantsApi.URL_BASE}$URL_API_VERSION/matriculas"
+    }
+}
