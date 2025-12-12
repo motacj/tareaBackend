@@ -1,6 +1,6 @@
 package es.atomsusej.tareaBackend.web
 
-import es.atomsusej.tareaBackend.business.IAsignaturaBusiness
+
 import es.atomsusej.tareaBackend.business.IPersonaBusisness
 import es.atomsusej.tareaBackend.exception.BusinessException
 import es.atomsusej.tareaBackend.exception.NotFoundException
@@ -11,6 +11,12 @@ import org.springframework.http.HttpHeaders
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
+import org.springframework.web.bind.annotation.RequestMethod
+@CrossOrigin(
+    origins = ["http://localhost:3000", "http://127.0.0.1:3000", "http://localhost:3001", "http://127.0.0.1:3001"],
+    methods = [RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE]
+)
+
 
 
 @RestController

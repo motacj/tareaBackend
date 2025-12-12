@@ -11,9 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
+import org.springframework.context.annotation.ComponentScan
+
 
 
 @SpringBootApplication
+@ComponentScan(basePackages = ["es.atomsusej.tareaBackend", "es.atomsusej.tareaBackend.config"])
 class TareaBackendApplication: CommandLineRunner{
     //Con esto traemos los metodos ya creados
     @Autowired
@@ -103,5 +106,5 @@ class TareaBackendApplication: CommandLineRunner{
 }
 
 fun main(args: Array<String>) {
-	runApplication<TareaBackendApplication>(*args)
+    runApplication<TareaBackendApplication>(*args)
 }
